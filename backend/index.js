@@ -15,12 +15,12 @@ connectDB()
 app.use(
     cors({
       origin: "http://localhost:5173",
-      credentials: true // enable set cookie
+      credentials: true 
     })
   );
 
 app.get("/", (req , res)=>{
-    res.send("Hello!! The backend is running")
+    res.send("Hello!! The backend is running.....🎉🎉")
 })
 
 app.use(bodyParser.json())
