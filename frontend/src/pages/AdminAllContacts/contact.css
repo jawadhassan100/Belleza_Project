@@ -1,0 +1,16 @@
+@media screen and (max-width:376px) {
+    .contact-email {
+        word-wrap: break-word;
+        font-size: 14px;
+    }
+  }
+
+@media screen and (max-width:321px) {
+    .contact-email {
+        word-wrap: break-word;
+        font-size: 14px;
+    }
+    .contact-name{
+        font-size: 16px;
+    }
+  }

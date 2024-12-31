@@ -1,0 +1,16 @@
+@media screen and (max-width:376px) {
+    .order-email {
+        word-wrap: break-word;
+        font-size: 14px;
+    }
+  }
+
+@media screen and (max-width:321px) {
+    .order-email {
+        word-wrap: break-word;
+        font-size: 14px;
+    }
+    .order-name{
+        font-size: 16px;
+    }
+  }

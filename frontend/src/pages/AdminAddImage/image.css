@@ -1,0 +1,11 @@
+@media screen and (max-width:321px) {
+    .image-text {
+        font-size: 17px;
+    }
+    .heading{
+        font-size: 11px;
+    }
+    .input{
+        font-size: 10px;
+    }
+  }
