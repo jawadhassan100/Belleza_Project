@@ -14,7 +14,7 @@ connectDB()
 
 app.use(
     cors({
-      origin: "https://belleza-project-x2gt.vercel.app",
+      origin: "https://www.belleza.pk",
       credentials: true 
     })
   );
