@@ -86,9 +86,27 @@ const Product = ({ productSectionRef }) => {
               Price: <span className="text-black">{product.price} PKR</span>
             </p>
             <Link to={`/order-form/${product._id}`}>
-              <button className="bg-purple-600 text-white px-6 py-2 rounded-sm text-lg hover:bg-purple-800 transition-all">
-                Order Now
-              </button>
+            <motion.button
+              className="bg-purple-600 text-white px-6 py-2 rounded-sm text-lg shadow-md transition-all"
+              whileHover={{
+                scale: 1.1, 
+                boxShadow: "0px 0px 15px rgba(128, 90, 213, 0.8)", 
+                backgroundColor: "#805ad5", 
+                transition: {
+                  type: "spring", 
+                  stiffness: 400, 
+                  damping: 10, 
+                  duration: 0.3,
+                },
+              }}
+              whileTap={{
+                scale: 0.9, 
+                backgroundColor: "#4c2889", 
+                transition: { duration: 0.2 },
+              }}
+  >
+    Order Now
+  </motion.button>
             </Link>
           </motion.div>
 

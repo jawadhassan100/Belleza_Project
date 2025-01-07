@@ -17,6 +17,7 @@ import FeatureImages from "./pages/FeatureImages/FeatureImages"
 import AdminAddImage from "./pages/AdminAddImage/AdminAddImage"
 import AdminAllContacts from "./pages/AdminAllContacts/AdminAllContacts"
 import AdminAllOrders from "./pages/AdminAllOrders/AdminAllOrders"
+import NotFoundPage from "./pages/404Page/404Page"
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -70,6 +71,7 @@ const App = () => {
       <Route path="/add-image" element={<AdminRoute element={<AdminAddImage/>} />} />
       <Route path="/all-contacts" element={<AdminRoute element={<AdminAllContacts />} />} />
       <Route path="/all-orders" element={<AdminRoute element={<AdminAllOrders />} />} />
+      <Route path="*" element={<NotFoundPage />} />
 
     </Routes>
     </AuthProvider>

@@ -14,7 +14,7 @@ import ProductImages from "./components/ProductImages/ProductImages"
 const HomePage = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
 
-  const phoneNumber = '+923425645900'
+  const phoneNumber = '+923369894297'
   const handleClick = () => {
     window.open(`https://wa.me/${phoneNumber}`, '_blank');
   };
