@@ -73,7 +73,7 @@ const OrderForm = () => {
           variant: "success",
           autoHideDuration: 1000,
         });
-        navigate("/");
+        navigate("/checkout");
       }
     } catch (error) {
       console.error("Failed to create order:", error);
