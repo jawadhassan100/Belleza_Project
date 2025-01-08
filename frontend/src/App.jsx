@@ -18,6 +18,7 @@ import AdminAddImage from "./pages/AdminAddImage/AdminAddImage"
 import AdminAllContacts from "./pages/AdminAllContacts/AdminAllContacts"
 import AdminAllOrders from "./pages/AdminAllOrders/AdminAllOrders"
 import NotFoundPage from "./pages/404Page/404Page"
+import CheckoutSuccess from "./pages/checkoutPage/checkoutPage"
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -67,6 +68,7 @@ const App = () => {
       <Route path="/order-form/:id"  element={ <OrderForm/>}/>
       <Route path="/product/image"  element={ <FeatureImages/>}/>
       <Route path="/unauthorized" element={<Unauthorized/>} />
+      <Route path="/checkout" element={<CheckoutSuccess/>} />
       <Route path="/dashboard" element={<AdminRoute element={<Dashboard/>} />} />
       <Route path="/add-image" element={<AdminRoute element={<AdminAddImage/>} />} />
       <Route path="/all-contacts" element={<AdminRoute element={<AdminAllContacts />} />} />
