@@ -18,6 +18,7 @@ import AdminAddImage from "./pages/AdminAddImage/AdminAddImage"
 import AdminAllContacts from "./pages/AdminAllContacts/AdminAllContacts"
 import AdminAllOrders from "./pages/AdminAllOrders/AdminAllOrders"
 import NotFoundPage from "./pages/404Page/404Page"
+import CheckoutPage from "./pages/checkoutPage/checkoutPage"
 
 
 const App = () => {
@@ -72,6 +73,7 @@ const App = () => {
       <Route path="/add-image" element={<AdminRoute element={<AdminAddImage/>} />} />
       <Route path="/all-contacts" element={<AdminRoute element={<AdminAllContacts />} />} />
       <Route path="/all-orders" element={<AdminRoute element={<AdminAllOrders />} />} />
+      <Route path="/checkout-page" element={<CheckoutPage />} />
       <Route path="*" element={<NotFoundPage />} />
 
     </Routes>
