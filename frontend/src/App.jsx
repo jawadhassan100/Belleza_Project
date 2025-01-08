@@ -18,7 +18,7 @@ import AdminAddImage from "./pages/AdminAddImage/AdminAddImage"
 import AdminAllContacts from "./pages/AdminAllContacts/AdminAllContacts"
 import AdminAllOrders from "./pages/AdminAllOrders/AdminAllOrders"
 import NotFoundPage from "./pages/404Page/404Page"
-import CheckoutPage from "./pages/checkoutPage/checkoutPage"
+import CheckoutPage from "./pages/CheckoutPage/CheckoutPage"
 
 
 const App = () => {
