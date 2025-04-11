@@ -6,11 +6,9 @@ const orderConfirmation = (userName, order, deliveryCharge, isAdmin = false) => 
   return `
     <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #fff; background-color: #000; padding: 20px;">
       <div style="max-width: 600px; margin: auto; border: 1px solid #444; padding: 20px;">
-        <div style="text-align: center;">
-          <img src="cid:logo" alt="Website Logo" style="max-width: 80px; border-radius: 10%;" />
-        </div>
+       
         <h1 style="color: #F8D7C4; text-align: center; margin-top: 5px;">
-          ${isAdmin ? 'New Order Notification' : 'Order Confirmation'}
+          ${isAdmin ? 'Belleza New Order ' : 'Belleza Order'}
         </h1>
         <p style="font-size: 16px;">Hello <strong>${userName}</strong>,</p>
         ${isAdmin ? `<p><strong>Date:</strong> ${day}, ${formattedDate}</p>` : ''}
@@ -51,7 +49,9 @@ const orderConfirmation = (userName, order, deliveryCharge, isAdmin = false) => 
         <p style="font-size: 16px; margin: 10px 0;">
           <strong>Payment Method:</strong> ${order.paymentMethod.toUpperCase()}
         </p>
-
+             ${isAdmin 
+          ? `<p style="font-size: 16px; margin: 10px 0;"><strong>CPhone Number:</strong> ${order.fullName}</p>`
+          : ''}
         ${isAdmin 
           ? `<p style="font-size: 16px; margin: 10px 0;"><strong>Customer Email:</strong> ${order.email}</p>`
           : ''}

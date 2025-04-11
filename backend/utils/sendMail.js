@@ -10,13 +10,6 @@ const sendEmail = (email, subject, htmlContent) => {
         to: email,
         subject: subject,
         html: htmlContent ,// Use HTML content
-        attachments: [
-            {
-              filename: 'bellezaLogo.jpg',
-              path: path.join(__dirname, './Template/image/bellezaLogo.jpg'),
-              cid: 'logo' // Match the cid used in the HTML template
-            },
-          ]
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
