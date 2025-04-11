@@ -1,31 +1,30 @@
-const nodemailer = require('nodemailer')
 const createTransporter = require('../config/smtpConfig');
-const path = require('path');
 
-const sendEmail = (email, subject, htmlContent) => {
-    const transporter = createTransporter(); // Use the transporter from smtpConfig
-
+const sendEmail = async (email, subject, htmlContent) => {
+    const transporter = createTransporter();
+    
     const mailOptions = {
         from: process.env.EMAIL_USER,
         to: email,
         subject: subject,
-        html: htmlContent ,// Use HTML content
+        html: htmlContent
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error('Error sending email:', error);
-            // Log detailed error information for debugging
-            console.error('Email failed to send:', {
+    try {
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Email sent successfully:', info.response);
+        return true;
+    } catch (error) {
+        console.error('Error sending email:', {
+            error,
+            mailOptions: {
                 from: mailOptions.from,
                 to: mailOptions.to,
-                subject: mailOptions.subject,
-                text: mailOptions.text
-            });
-        } else {
-            console.log('Email sent:', info.response);
-        }
-    });
+                subject: mailOptions.subject
+            }
+        });
+        return false;
+    }
 };
 
-module.exports = sendEmail
+module.exports = sendEmail;

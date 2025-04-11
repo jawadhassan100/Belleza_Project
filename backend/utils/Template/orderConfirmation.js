@@ -50,14 +50,14 @@ const orderConfirmation = (userName, order, deliveryCharge, isAdmin = false) => 
           <strong>Payment Method:</strong> ${order.paymentMethod.toUpperCase()}
         </p>
              ${isAdmin 
-          ? `<p style="font-size: 16px; margin: 10px 0;"><strong>CPhone Number:</strong> ${order.fullName}</p>`
+          ? `<p style="font-size: 16px; margin: 10px 0;"><strong>Name:</strong> ${order.fullName}</p>`
           : ''}
         ${isAdmin 
           ? `<p style="font-size: 16px; margin: 10px 0;"><strong>Customer Email:</strong> ${order.email}</p>`
           : ''}
 
         ${isAdmin 
-          ? `<p style="font-size: 16px; margin: 10px 0;"><strong>CPhone Number:</strong> ${order.phoneNumber}</p>`
+          ? `<p style="font-size: 16px; margin: 10px 0;"><strong>Phone Number:</strong> ${order.phoneNumber}</p>`
           : ''}
         
         <p style="font-size: 14px; margin-top: 20px;">
