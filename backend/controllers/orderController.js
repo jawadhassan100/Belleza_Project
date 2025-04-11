@@ -40,12 +40,12 @@ exports.createOrder = async (req, res) => {
     // Send customer confirmation email
     const customerSubject = "Order Confirmation";
     const customerHtmlContent = orderConfirmation(fullName, newOrder, deliveryCharge);
-    sendMail(email, customerSubject, customerHtmlContent);
+    await sendMail(email, customerSubject, customerHtmlContent);
 
     // Send admin notification email
     const adminSubject = "New Order Notification";
     const adminHtmlContent = orderConfirmation("Admin", newOrder, deliveryCharge, true);
-    sendMail(adminEmail, adminSubject, adminHtmlContent);
+    await sendMail(adminEmail, adminSubject, adminHtmlContent);
 
     // Send success response
     res.status(200).json({ message: "Order created successfully", order: newOrder });
