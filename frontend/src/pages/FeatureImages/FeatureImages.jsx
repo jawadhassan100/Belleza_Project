@@ -56,7 +56,7 @@ const FeatureImages = () => {
         <h2 className="text-4xl font-bold text-center text-purple-500 mb-10">Product Images</h2>
 
         {/* 🌟 MASONRY layout using Tailwind columns */}
-        <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-4 space-y-4">
+        <div className="columns-2 sm:columns-3 md:columns-4  gap-4 space-y-4">
           {allImages.map((img, idx) => (
             <img
               key={idx}
