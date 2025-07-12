@@ -4,6 +4,14 @@ import config from "../../config/config";
 import LoadingAnimation from "../../components/LoadingAnimation/LoadingAnimation";
 import { FaArrowUp } from "react-icons/fa";
 
+// LightGallery imports
+import LightGallery from "lightgallery/react";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+import lgZoom from "lightgallery/plugins/zoom";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+
 const BASE_URL = config.BASE_URL;
 
 const FeatureImages = () => {
@@ -12,19 +20,19 @@ const FeatureImages = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    window.history.scrollRestoration = 'manual';
+    window.history.scrollRestoration = "manual";
 
     const handleScroll = () => {
       setShowScrollButton(window.scrollY > 110);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -55,17 +63,25 @@ const FeatureImages = () => {
       <section className="pt-24 pb-3 px-3 bg-purple-200 min-h-screen">
         <h2 className="text-4xl font-bold text-center text-purple-500 mb-10">Product Images</h2>
 
-        {/* 🌟 MASONRY layout using Tailwind columns */}
-        <div className="columns-2 sm:columns-3 md:columns-4  gap-4 space-y-4">
+        <LightGallery
+          speed={500}
+          plugins={[lgZoom, lgThumbnail]}
+          elementClassNames="columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-4 space-y-4"
+        >
           {allImages.map((img, idx) => (
-            <img
+            <a
               key={idx}
-              src={img.imageUrl}
-              alt={`Image ${idx}`}
-              className="w-full mb-4 break-inside-avoid rounded-lg hover:scale-105 transition-transform duration-300"
-            />
+              href={img.imageUrl}
+              className="break-inside-avoid block w-full mb-4"
+            >
+              <img
+                src={img.imageUrl}
+                alt={`Image ${idx}`}
+                className="w-full rounded-lg hover:scale-105 transition-transform duration-300"
+              />
+            </a>
           ))}
-        </div>
+        </LightGallery>
       </section>
 
       {showScrollButton && (
