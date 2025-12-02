@@ -68,21 +68,23 @@ const HomePage = () => {
        <Footer/>
     </div>
      {showScrollButton && (
-        <button
-          onClick={handleClick}
-      className="fixed bottom-20 right-4 p-3 bg-green-500 rounded-full shadow-lg cursor-pointer hover:bg-green-600"
-    >
-      <FaWhatsapp size={30} color="white" />
-        </button>
-      )}
-    {showScrollButton && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-5 right-5 bg-purple-500 text-white p-3 rounded-full shadow-md hover:bg-purple-600 transition-all duration-300"
-        >
-          <FaArrowUp className='text-xl'/>
-        </button>
-      )}
+  <button
+    onClick={handleClick}
+    className="fixed bottom-20 left-4 p-3 bg-green-500 rounded-full shadow-lg cursor-pointer hover:bg-green-600"
+  >
+    <FaWhatsapp size={30} color="white" />
+  </button>
+)}
+
+{showScrollButton && (
+  <button
+    onClick={scrollToTop}
+    className="fixed bottom-5 left-5 bg-purple-500 text-white p-3 rounded-full shadow-md hover:bg-purple-600 transition-all duration-300"
+  >
+    <FaArrowUp className='text-xl'/>
+  </button>
+)}
+
 
     </>
   )
